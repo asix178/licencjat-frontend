@@ -1,0 +1,47 @@
+.home {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.home-button {
+    background-color: #001f3f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button {
+    color: #001f3f;
+    background-color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #003366;
+}
+
+.logout-button:hover{
+    background-color: #4092d9;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .home-button, .logout-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}

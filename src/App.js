@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './styles/App.css';
+import Header from './components/Header';
+import Home from './components/Home';
+import { Routes, Route } from 'react-router-dom';
+import ManageLottery from "./components/ManageLottery";
+import MainDraw from "./components/MainDraw";
+import AddCategory from "./components/AddCategory";
+import AddPrize from "./components/AddPrize";
+import PrizeList from "./components/PrizeList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+    return (
+
+            <div className="app">
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/zarzadzaj" element={<ManageLottery />} />
+                    <Route path="/glowne" element={<MainDraw />} />
+                    <Route path="/zarzadzaj/kategoria" element={<AddCategory />} />
+                    <Route path="/zarzadzaj/nagrody" element={<AddPrize />} />
+                    <Route path="/zarzadzaj/listanagrod" element={<PrizeList />} />
+                </Routes>
+            </div>
+
+    );
+};
 
 export default App;
