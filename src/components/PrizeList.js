@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import '../styles/Home.css';
 import '../styles/Table.css';
 
@@ -6,32 +6,43 @@ const PrizeList = () => {
     const [prizes, setPrizes] = useState([]);
 
     useEffect(() => {
-        setPrizes([
-            { id: 1, name: 'Telewizor 55"', amount: 3 },
-            { id: 2, name: 'Odkurzacz', amount: 5 },
-            { id: 3, name: 'Zestaw garnków', amount: 2 }
-        ]);
+        const fetchCounts = async () => {
+            try {
+                const res = await fetch('http://localhost:8080/prize/count');
+                if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+                const data = await res.json();
+                setPrizes(data);
+            } catch (error) {
+                console.error('Failed to fetch prize counts:', error);
+            }
+        };
+
+        fetchCounts();
     }, []);
 
     return (
         <div className="home center-content">
             <h2>Lista nagród</h2>
-            <table className="styled-table">
-                <thead>
-                <tr>
-                    <th>Nazwa</th>
-                    <th>Ilość</th>
-                </tr>
-                </thead>
-                <tbody>
-                {prizes.map((prize, index) => (
-                    <tr key={prize.id} className={index % 2 === 1 ? 'alt-row' : ''}>
-                        <td>{prize.name}</td>
-                        <td>{prize.amount}</td>
+            {Object.keys(prizes).length === 0 ? (
+                <p>Ładowanie lub brak nagród</p>
+            ) : (
+                <table className="styled-table">
+                    <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Ilość</th>
                     </tr>
-                ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {Object.entries(prizes).map(([category, count], index) => (
+                        <tr key={category} className={index % 2 === 1 ? 'alt-row' : ''}>
+                            <td>{category}</td>
+                            <td>{count}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            )}
         </div>
     );
 };

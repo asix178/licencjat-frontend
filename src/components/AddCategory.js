@@ -4,16 +4,39 @@ import '../styles/Home.css';
 const AddCategory = () => {
     const [name, setName] = useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!name.trim()) {
             alert('Nazwa nie może być pusta.');
             return;
         }
         const confirmed = window.confirm(`Czy na pewno dodać kategorię: ${name}?`);
         if (confirmed) {
-            console.log('Dodano kategorię:', name);
-            setName('');
+
+            try {
+                const response = await fetch('http://localhost:8080/category', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({name: name.trim()})
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+
+                console.log('Dodano kategorię:', name);
+                alert('Dodano kategorię');
+                setName('');
+            } catch (error) {
+                console.error('Failed to add category:', error);
+                alert('Error adding category. See console for details.');
+            }
+
+
         }
+
+
     };
 
     return (
