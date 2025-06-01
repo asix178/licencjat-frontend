@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Header.css';
 
-const Header = () => {
+const Header = ({header}) => {
     return (
         <header className="header">
-            <h1>Administrator</h1>
+            <h1>{header}</h1>
         </header>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Home.css';
 import {useNavigate} from "react-router-dom";
+import Header from "./Header";
 
 const MainDraw = () => {
     const navigate = useNavigate();
@@ -14,8 +15,9 @@ const MainDraw = () => {
     };
 
     return (
+        <div><Header header ={"Administrator"}/>
         <div style={{ padding: '20px' }}>
-            <h2>Main Draw</h2>
+            <h2>Losowanie główne</h2>
 
             <div className="home">
                 <button className="home-button" onClick={handleScanQR}>
@@ -25,6 +27,7 @@ const MainDraw = () => {
                     Wpisz numer
                 </button>
             </div>
+        </div>
         </div>
     );
 };

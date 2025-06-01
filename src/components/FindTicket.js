@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from "./Header";
 
 const FindTicket = () => {
     const [number, setNumber] = useState('');
@@ -27,6 +28,7 @@ const FindTicket = () => {
     };
 
     return (
+        <div><Header header ={"Administrator"}/>
         <div style={{ padding: '20px' }}>
             <h2>Wyszukaj los</h2>
             <input
@@ -37,6 +39,7 @@ const FindTicket = () => {
                 style={{ padding: '8px', width: '250px', marginRight: '10px' }}
             />
             <button className="home-button" onClick={handleSearch}>Wyszukaj</button>
+        </div>
         </div>
     );
 };

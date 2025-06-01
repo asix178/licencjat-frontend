@@ -18,7 +18,6 @@ const App = () => {
     return (
 
             <div className="app">
-                <Header />
                 <Routes>
                     <Route path="/administrator" element={<Administrator />} />
                     <Route path="/administrator/zarzadzaj" element={<ManageLottery />} />

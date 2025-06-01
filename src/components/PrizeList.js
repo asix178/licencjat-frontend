@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/Home.css';
 import '../styles/Table.css';
+import Header from "./Header";
 
 const PrizeList = () => {
     const [prizes, setPrizes] = useState([]);
@@ -21,28 +22,30 @@ const PrizeList = () => {
     }, []);
 
     return (
-        <div className="home center-content">
-            <h2>Lista nagród</h2>
-            {Object.keys(prizes).length === 0 ? (
-                <p>Ładowanie lub brak nagród</p>
-            ) : (
-                <table className="styled-table">
-                    <thead>
-                    <tr>
-                        <th>Nazwa</th>
-                        <th>Ilość</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {Object.entries(prizes).map(([category, count], index) => (
-                        <tr key={category} className={index % 2 === 1 ? 'alt-row' : ''}>
-                            <td>{category}</td>
-                            <td>{count}</td>
+        <div><Header header={"Administrator"}/>
+            <div className="home center-content">
+                <h2>Lista nagród</h2>
+                {Object.keys(prizes).length === 0 ? (
+                    <p>Ładowanie lub brak nagród</p>
+                ) : (
+                    <table className="styled-table">
+                        <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Ilość</th>
                         </tr>
-                    ))}
-                    </tbody>
-                </table>
-            )}
+                        </thead>
+                        <tbody>
+                        {Object.entries(prizes).map(([category, count], index) => (
+                            <tr key={category} className={index % 2 === 1 ? 'alt-row' : ''}>
+                                <td>{category}</td>
+                                <td>{count}</td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                )}
+            </div>
         </div>
     );
 };

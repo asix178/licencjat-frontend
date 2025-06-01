@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Html5Qrcode } from 'html5-qrcode';
 import { useNavigate } from 'react-router-dom';
+import Header from "./Header";
 
 const Scan = () => {
     const scannerRef = useRef(null);
@@ -69,6 +70,7 @@ const Scan = () => {
     }, [navigate]);
 
     return (
+        <div><Header header ={"Administrator"}/>
         <div className="home">
             <h2>Skanuj QR</h2>
             <div
@@ -82,6 +84,7 @@ const Scan = () => {
                     borderRadius: '8px',
                 }}
             />
+        </div>
         </div>
     );
 };

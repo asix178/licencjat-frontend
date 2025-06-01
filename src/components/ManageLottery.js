@@ -1,6 +1,7 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import '../styles/Home.css';
+import Header from "./Header";
 
 const ManageLottery = () => {
     const navigate = useNavigate();
@@ -66,6 +67,7 @@ const ManageLottery = () => {
     };
 
     return (
+        <div><Header header ={"Administrator"}/>
         <div className="home">
             <h2>Zarządzaj Loterią</h2>
             <button className="home-button" onClick={() => navigate('/administrator/zarzadzaj/kategoria')}>Dodaj kategorię losów
@@ -74,6 +76,7 @@ const ManageLottery = () => {
             <button className="home-button" onClick={() => navigate('/administrator/zarzadzaj/listanagrod')}>Lista nagród</button>
             <button className="home-button" onClick={handleGenerate}>Wygeneruj losy</button>
             <button className="home-button" onClick={handleDelete}>Usuń dane</button>
+        </div>
         </div>
     );
 };

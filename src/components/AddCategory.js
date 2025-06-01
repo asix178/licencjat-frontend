@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Home.css';
+import Header from "./Header";
 
 const AddCategory = () => {
     const [name, setName] = useState('');
@@ -40,6 +41,7 @@ const AddCategory = () => {
     };
 
     return (
+        <div><Header header ={"Administrator"}/>
         <div className="home">
             <h2>Dodaj kategorię losów</h2>
             <input
@@ -51,6 +53,7 @@ const AddCategory = () => {
                 style={{ padding: '10px', marginBottom: '15px' }}
             />
             <button className="home-button" onClick={handleSubmit}>Dodaj</button>
+        </div>
         </div>
     );
 };

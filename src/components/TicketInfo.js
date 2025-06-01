@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Header from "./Header";
 
 const TicketInfo = () => {
     const { number } = useParams();
@@ -27,10 +28,12 @@ const TicketInfo = () => {
     if (!ticket) return <p>Nie znaleziono losu o numerze {number}.</p>;
 
     return (
+        <div><Header header ={"Administrator"}/>
         <div style={{ padding: '20px' }}>
             <h2>Informacje o losie</h2>
             <p><strong>Numer losu:</strong> {ticket.number}</p>
             <p><strong>Czy jest w aplikacji:</strong> {ticket.isUsed ? 'tak' : 'nie'}</p>
+        </div>
         </div>
     );
 };

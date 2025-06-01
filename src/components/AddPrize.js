@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/Home.css';
+import Header from "./Header";
 
 const AddPrize = () => {
     const [name, setName] = useState('');
@@ -66,6 +67,7 @@ const AddPrize = () => {
     };
 
     return (
+        <div><Header header ={"Administrator"}/>
         <div className="home">
             <h2>Dodaj nagrodę</h2>
             <input
@@ -97,6 +99,7 @@ const AddPrize = () => {
                 style={{padding: '10px', marginBottom: '15px'}}
             />
             <button className="home-button" onClick={handleSubmit}>Dodaj</button>
+        </div>
         </div>
     );
 };
