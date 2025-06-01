@@ -67,7 +67,7 @@ const ManageLottery = () => {
     };
 
     return (
-        <div><Header header ={"Administrator"}/>
+        <div><Header header ={"Administrator"} to="/administrator"/>
         <div className="home">
             <h2>Zarządzaj Loterią</h2>
             <button className="home-button" onClick={() => navigate('/administrator/zarzadzaj/kategoria')}>Dodaj kategorię losów

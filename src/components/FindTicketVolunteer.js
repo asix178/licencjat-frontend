@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 
-const FindTicket = () => {
+const FindTicketVolunteer = () => {
     const [number, setNumber] = useState('');
     const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const FindTicket = () => {
                 return;
             }
 
-            navigate(`/administrator/glowne/bilet/${trimmed}`);
+            navigate(`/wolontariusz/bilet/${trimmed}`);
         } catch (error) {
             console.error('Błąd podczas wyszukiwania:', error);
             alert('Wystąpił błąd. Sprawdź konsolę.');
@@ -28,20 +28,20 @@ const FindTicket = () => {
     };
 
     return (
-        <div><Header header ={"Administrator"} to="/administrator/glowne"/>
-        <div style={{ padding: '20px' }}>
-            <h2>Wyszukaj los</h2>
-            <input
-                type="text"
-                value={number}
-                onChange={(e) => setNumber(e.target.value)}
-                placeholder="Wpisz numer losu"
-                style={{ padding: '8px', width: '250px', marginRight: '10px' }}
-            />
-            <button className="home-button" onClick={handleSearch}>Wyszukaj</button>
-        </div>
+        <div><Header header ={"Wolontariusz"} to="/wolontariusz"/>
+            <div style={{ padding: '20px' }}>
+                <h2>Wyszukaj los</h2>
+                <input
+                    type="text"
+                    value={number}
+                    onChange={(e) => setNumber(e.target.value)}
+                    placeholder="Wpisz numer losu"
+                    style={{ padding: '8px', width: '250px', marginRight: '10px' }}
+                />
+                <button className="home-button" onClick={handleSearch}>Wyszukaj</button>
+            </div>
         </div>
     );
 };
 
-export default FindTicket;
+export default FindTicketVolunteer;

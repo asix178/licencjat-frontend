@@ -22,7 +22,7 @@ const PrizeList = () => {
     }, []);
 
     return (
-        <div><Header header={"Administrator"}/>
+        <div><Header header={"Administrator"} to="/administrator/zarzadzaj"/>
             <div className="home center-content">
                 <h2>Lista nagród</h2>
                 {Object.keys(prizes).length === 0 ? (

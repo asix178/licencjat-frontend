@@ -1,22 +1,21 @@
 import React from 'react';
+import Header from "./Header";
 import '../styles/Home.css';
 import {useNavigate} from "react-router-dom";
-import Header from "./Header";
 
-const MainDraw = () => {
+const Volunteer = () => {
     const navigate = useNavigate();
 
     const handleScanQR = () => {
-        navigate('/administrator/glowne/scan');
+        navigate('/wolontariusz/scan');
     };
 
     const handleEnterNumber = () => {
-        navigate('/administrator/glowne/wpisz-numer');
+        navigate('/wolontariusz/wpisz-numer');
     };
 
-    return (
-        <div><Header header ={"Administrator"} to="/administrator"/>
-        <div style={{ padding: '20px' }}>
+    return <div><Header header={"Wolontariusz"} to="/"/>
+        <div style={{padding: '20px'}}>
             <h2>Losowanie główne</h2>
 
             <div className="home">
@@ -26,10 +25,12 @@ const MainDraw = () => {
                 <button className="home-button" onClick={handleEnterNumber}>
                     Wpisz numer
                 </button>
+                <button className="home-button" >
+                    Wyloguj
+                </button>
             </div>
         </div>
-        </div>
-    );
+    </div>
 };
 
-export default MainDraw;
+export default Volunteer;

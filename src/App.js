@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles/App.css';
-import Header from './components/Header';
 import Administrator from './components/Administrator';
 import { Routes, Route } from 'react-router-dom';
 import ManageLottery from "./components/ManageLottery";
@@ -12,6 +11,13 @@ import FindTicket from "./components/FindTicket";
 import TicketInfo from "./components/TicketInfo";
 import Scan from "./components/Scan";
 import TicketInfoUuid from "./components/TicketInfoUuid";
+import Home from "./components/Home";
+import Volunteer from "./components/Volunteer";
+import User from "./components/User";
+import ScanVolunteer from "./components/ScanVolunteer";
+import FindTicketVolunteer from "./components/FindTicketVolunteer";
+import TicketInfoUuidVolunteer from "./components/TicketInfoUUIDVolunteer";
+import TicketInfoVolunteer from "./components/TicketInfoVolunteer";
 
 
 const App = () => {
@@ -19,6 +25,9 @@ const App = () => {
 
             <div className="app">
                 <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/wolontariusz" element={<Volunteer />} />
+                    <Route path="/uzytkownik" element={<User />} />
                     <Route path="/administrator" element={<Administrator />} />
                     <Route path="/administrator/zarzadzaj" element={<ManageLottery />} />
                     <Route path="/administrator/glowne" element={<MainDraw />} />
@@ -29,6 +38,11 @@ const App = () => {
                     <Route path="/administrator/glowne/bilet/:number" element={<TicketInfo />} />
                     <Route path="/administrator/glowne/bilet/id/:uuid" element={<TicketInfoUuid />} />
                     <Route path="/administrator/glowne/scan" element={<Scan />} />
+                    <Route path="/wolontariusz/scan" element={<ScanVolunteer />} />
+                    <Route path="/wolontariusz/wpisz-numer" element={<FindTicketVolunteer />} />
+                    <Route path="/wolontariusz/bilet/:number" element={<TicketInfoVolunteer />} />
+                    <Route path="/wolontariusz/bilet/id/:uuid" element={<TicketInfoUuidVolunteer />} />
+
                 </Routes>
             </div>
 

@@ -3,7 +3,7 @@ import { Html5Qrcode } from 'html5-qrcode';
 import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 
-const Scan = () => {
+const ScanVolunteer = () => {
     const scannerRef = useRef(null);
     const scannerStartedRef = useRef(false);
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Scan = () => {
 
         const qrCodeSuccessCallback = (decodedText) => {
             if (decodedText) {
-                navigate(`/administrator/glowne/bilet/id/${decodedText}`);
+                navigate(`/wolontariusz/bilet/id/${decodedText}`);
             }
         };
 
@@ -70,23 +70,23 @@ const Scan = () => {
     }, [navigate]);
 
     return (
-        <div><Header header ={"Administrator"} to="/administrator/glowne"/>
-        <div className="home">
-            <h2>Skanuj QR</h2>
-            <div
-                id="qr-reader"
-                style={{
-                    width: '500px',
-                    height: '500px',
-                    overflow: 'hidden',
-                    position: 'relative',
-                    border: '2px solid #ccc',
-                    borderRadius: '8px',
-                }}
-            />
-        </div>
+        <div><Header header ={"Wolontariusz"} to="/wolontariusz"/>
+            <div className="home">
+                <h2>Skanuj QR</h2>
+                <div
+                    id="qr-reader"
+                    style={{
+                        width: '500px',
+                        height: '500px',
+                        overflow: 'hidden',
+                        position: 'relative',
+                        border: '2px solid #ccc',
+                        borderRadius: '8px',
+                    }}
+                />
+            </div>
         </div>
     );
 };
 
-export default Scan;
+export default ScanVolunteer;

@@ -67,7 +67,7 @@ const AddPrize = () => {
     };
 
     return (
-        <div><Header header ={"Administrator"}/>
+        <div><Header header ={"Administrator"} to="/administrator/zarzadzaj"/>
         <div className="home">
             <h2>Dodaj nagrodę</h2>
             <input

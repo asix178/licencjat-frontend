@@ -28,9 +28,9 @@ const TicketInfoUuid = () => {
     if (!ticket) return <p>Nie znaleziono losu.</p>;
 
     return (
-        <div><Header header ={"Administrator"}/>
+        <div><Header header ={"Administrator"} to="/administrator/glowne/scan"/>
             <div style={{padding: '20px'}}>
-                <h2>Informacje o losie (UUID)</h2>
+                <h2>Informacje o losie</h2>
                 <p><strong>Numer losu:</strong> {ticket.number}</p>
                 <p><strong>Czy jest w aplikacji:</strong> {ticket.isUsed ? 'tak' : 'nie'}</p>
             </div>

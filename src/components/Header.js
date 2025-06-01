@@ -1,10 +1,16 @@
 import React from 'react';
 import '../styles/Header.css';
+import {useNavigate} from "react-router-dom";
 
-const Header = ({header}) => {
+const Header = ({header, to}) => {
+    const navigate = useNavigate();
+
     return (
         <header className="header">
-            <h1>{header}</h1>
+                <button className="back-button" onClick={() => navigate(to)}>
+                    ←
+                </button>
+            <h1 className="header-title">{header}</h1>
         </header>
     );
 };

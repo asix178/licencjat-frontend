@@ -28,7 +28,7 @@ const TicketInfo = () => {
     if (!ticket) return <p>Nie znaleziono losu o numerze {number}.</p>;
 
     return (
-        <div><Header header ={"Administrator"}/>
+        <div><Header header ={"Administrator"} to="/administrator/glowne/wpisz-numer"/>
         <div style={{ padding: '20px' }}>
             <h2>Informacje o losie</h2>
             <p><strong>Numer losu:</strong> {ticket.number}</p>
