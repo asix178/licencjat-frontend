@@ -29,7 +29,7 @@ const User = () => {
                         Moje Losy
                     </button>
 
-                    <button className="home-button" onClick={handleLogout}>
+                    <button className="logout-button" onClick={handleLogout}>
                         Wyloguj
                     </button>
                 </main>

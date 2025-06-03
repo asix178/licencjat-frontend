@@ -10,11 +10,11 @@ const Home = () => {
             <h1>Witaj w Loteriadzie 🎟️</h1>
 
             <div className="home">
-                <button className="home-button" onClick={() => navigate('/administrator')}>
+                <button className="home-button" onClick={() => navigate('/administrator/logowanie')}>
                     Administrator
                 </button>
 
-                <button className="home-button" onClick={() => navigate('/wolontariusz')}>
+                <button className="home-button" onClick={() => navigate('/wolontariusz/logowanie')}>
                     Wolontariusz
                 </button>
 

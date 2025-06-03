@@ -14,6 +14,11 @@ const Volunteer = () => {
         navigate('/wolontariusz/wpisz-numer');
     };
 
+    const handleLogout = () => {
+        localStorage.removeItem("jwt");
+        navigate('/wolontariusz/logowanie');
+    };
+
     return <div><Header header={"Wolontariusz"} to="/wolontariusz"/>
         <div style={{padding: '20px'}}>
             <h2>Losowanie główne</h2>
@@ -25,7 +30,7 @@ const Volunteer = () => {
                 <button className="home-button" onClick={handleEnterNumber}>
                     Wpisz numer
                 </button>
-                <button className="home-button" >
+                <button className="logout-button" onClick={handleLogout}>
                     Wyloguj
                 </button>
             </div>

@@ -25,6 +25,9 @@ import TicketInfoUser from "./components/TicketInfoUser";
 import TicketInfoUUIDUser from "./components/TicketInfoUUIDUser";
 import UserLogin from "./components/UserLogin";
 import UserRegister from "./components/UserRegister";
+import AdminLogin from "./components/AdminLogin";
+import VolunteerLogin from "./components/VolunteerLogin";
+import VolunteerRegister from "./components/VolunteerRegister";
 
 
 const App = () => {
@@ -56,7 +59,9 @@ const App = () => {
                     <Route path="/uzytkownik/moje-losy" element={<UserTicket />} />
                     <Route path="/uzytkownik/bilet/:number" element={<TicketInfoUser />} />
                     <Route path="/uzytkownik/bilet/id/:uuid" element={<TicketInfoUUIDUser />} />
-
+                    <Route path="/administrator/logowanie" element={<AdminLogin />} />
+                    <Route path="/wolontariusz/logowanie" element={<VolunteerLogin />} />
+                    <Route path="/wolontariusz/rejestracja" element={<VolunteerRegister />} />
 
                 </Routes>
             </div>
