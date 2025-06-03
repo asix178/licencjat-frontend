@@ -14,7 +14,7 @@ const Volunteer = () => {
         navigate('/wolontariusz/wpisz-numer');
     };
 
-    return <div><Header header={"Wolontariusz"} to="/"/>
+    return <div><Header header={"Wolontariusz"} to="/wolontariusz"/>
         <div style={{padding: '20px'}}>
             <h2>Losowanie główne</h2>
 

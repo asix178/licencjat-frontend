@@ -18,7 +18,7 @@ const Home = () => {
                     Wolontariusz
                 </button>
 
-                <button className="home-button" onClick={() => navigate('/uzytkownik')}>
+                <button className="home-button" onClick={() => navigate('/uzytkownik/logowanie')}>
                     Użytkownik
                 </button>
             </div>

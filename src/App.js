@@ -18,6 +18,13 @@ import ScanVolunteer from "./components/ScanVolunteer";
 import FindTicketVolunteer from "./components/FindTicketVolunteer";
 import TicketInfoUuidVolunteer from "./components/TicketInfoUUIDVolunteer";
 import TicketInfoVolunteer from "./components/TicketInfoVolunteer";
+import ScanUser from "./components/ScanUser";
+import FindTicketUser from "./components/FindTicketUser";
+import UserTicket from "./components/UserTicket";
+import TicketInfoUser from "./components/TicketInfoUser";
+import TicketInfoUUIDUser from "./components/TicketInfoUUIDUser";
+import UserLogin from "./components/UserLogin";
+import UserRegister from "./components/UserRegister";
 
 
 const App = () => {
@@ -28,6 +35,8 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/wolontariusz" element={<Volunteer />} />
                     <Route path="/uzytkownik" element={<User />} />
+                    <Route path="/uzytkownik/logowanie" element={<UserLogin />} />
+                    <Route path="/uzytkownik/rejestracja" element={<UserRegister />} />
                     <Route path="/administrator" element={<Administrator />} />
                     <Route path="/administrator/zarzadzaj" element={<ManageLottery />} />
                     <Route path="/administrator/glowne" element={<MainDraw />} />
@@ -42,6 +51,12 @@ const App = () => {
                     <Route path="/wolontariusz/wpisz-numer" element={<FindTicketVolunteer />} />
                     <Route path="/wolontariusz/bilet/:number" element={<TicketInfoVolunteer />} />
                     <Route path="/wolontariusz/bilet/id/:uuid" element={<TicketInfoUuidVolunteer />} />
+                    <Route path="/uzytkownik/scan" element={<ScanUser />} />
+                    <Route path="/uzytkownik/wpisz-numer" element={<FindTicketUser />} />
+                    <Route path="/uzytkownik/moje-losy" element={<UserTicket />} />
+                    <Route path="/uzytkownik/bilet/:number" element={<TicketInfoUser />} />
+                    <Route path="/uzytkownik/bilet/id/:uuid" element={<TicketInfoUUIDUser />} />
+
 
                 </Routes>
             </div>

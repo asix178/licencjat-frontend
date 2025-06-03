@@ -71,7 +71,7 @@ const ScanVolunteer = () => {
 
     return (
         <div><Header header ={"Wolontariusz"} to="/wolontariusz"/>
-            <div className="home">
+            <div className="home-scanner">
                 <h2>Skanuj QR</h2>
                 <div
                     id="qr-reader"

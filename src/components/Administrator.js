@@ -7,7 +7,7 @@ const Administrator = () => {
     const navigate = useNavigate();
 
     return (
-        <div><Header header ={"Administrator"} to="/"/>
+        <div><Header header ={"Administrator"} to="/administrator"/>
         <main className="home">
             <button className="home-button" onClick={() => navigate('/administrator/zarzadzaj')}>
                 Zarządzaj loterią
