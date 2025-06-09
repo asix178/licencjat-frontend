@@ -43,7 +43,6 @@ const TicketInfoVolunteer = () => {
                 isUsed: true
             }));
 
-            alert("Nagroda została wydana.");
         } catch (error) {
             console.error('Błąd podczas oznaczania losu jako użyty:', error);
             alert("Wystąpił błąd. Sprawdź konsolę.");

@@ -55,7 +55,6 @@ const UserTicketList = () => {
                             <strong>Numer:</strong> {ticket.number} <br/>
                             <strong>Kategoria:</strong> {ticket.category.name} <br/>
                             <strong>Odebrana:</strong> {ticket.isUsed ? 'Tak' : 'Nie'} <br/>
-                            <strong>Nagroda:</strong> {ticket.prize?.name || 'Brak'}
                         </li>
                     ))}
                 </ul>
