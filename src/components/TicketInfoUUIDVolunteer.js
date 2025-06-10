@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from "./Header";
+import {parseJwt} from "../utils/jwt";
 
 const TicketInfoUuidVolunteer = () => {
     const { uuid } = useParams();
     const [ticket, setTicket] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchTicket = async () => {
@@ -25,11 +27,28 @@ const TicketInfoUuidVolunteer = () => {
     }, [uuid]);
 
     if (loading) return <p>Ładowanie danych losu...</p>;
+    if (error) return <p style={{ color: 'red' }}>{error}</p>;
     if (!ticket) return <p>Nie znaleziono losu.</p>;
 
     const useTicket = async () => {
         try {
-            const res = await fetch(`http://localhost:8080/ticket/isUsed/${ticket.id}`, {
+            const token = localStorage.getItem('vol_jwt');
+            if (!token) {
+                setError('Brak tokenu. Użytkownik nie jest zalogowany.');
+                setLoading(false);
+                return;
+            }
+
+            const payload = parseJwt(token);
+            const uuid = payload?.volunteerId;
+
+            if (!uuid) {
+                setError('Nieprawidłowy token JWT.');
+                setLoading(false);
+                return;
+            }
+
+            const res = await fetch(`http://localhost:8080/ticket/isUsed/${ticket.id}/volunteer/${uuid}`, {
                 method: 'PUT'
             });
 
